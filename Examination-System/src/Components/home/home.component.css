@@ -1,0 +1,86 @@
+.b1{
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.b2{
+    background-color:transparent;
+    color: navy;
+    font-size: 1rem;
+    border: 5px navy solid;
+}
+.co{
+    background-color:antiquewhite;
+}
+.b1:hover{
+    background-color: rgb(220, 220, 250);
+    color: navy;
+    font-weight: normal;
+    border: none;
+}
+.b2:hover{
+    background-color:navy;
+    font-weight: bold;
+    color: white;
+}
+/* section 2 subjects */
+.bttn{
+    background-color: navy;
+    color: white;
+    font-size: 1.5rem;
+
+}
+.bttn:hover{
+    background-color: rgb(220, 220, 250);
+    color: navy;
+    border: none;
+}
+
+
+/* section 3 reviews*/
+.reviews{
+    background-color: rgb(243,243,243);
+}
+.line{
+    width: 200px;
+    height: 2px;
+    font-weight: bolder;
+    background-color: black;
+}
+/*section 4 form*/
+.form-control {
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+  background-color: rgb(220,222,247);
+}
+.form{
+    background-color: rgb(220,222,247);
+    padding: 5rem;
+}
+.tt{
+   text-decoration: none;
+}
+.tex{
+    color:rgb(39, 39, 194);
+}
+
+
+.carousel-indicators button {
+  background-color: transparent;
+  border: 2px solid black;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.carousel-indicators .active {
+  background-color: black;
+  border-color: black;
+}
+.img{
+    width: 20rem;
+    height: 20rem;
+}

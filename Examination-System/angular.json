@@ -33,8 +33,7 @@
             "scripts": [
           "node_modules/bootstrap/dist/js/bootstrap.js",
           "node_modules/bootstrap/dist/js/bootstrap.min.js",
-          "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
-          "https://kit.fontawesome.com/6f96988bd4.js"
+          "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
         
             ]
           },
