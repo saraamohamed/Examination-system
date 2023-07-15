@@ -8,15 +8,17 @@ import { AboutComponent } from 'src/Components/about/about.component';
 import { NotFoundComponent } from 'src/Components/not-found/not-found.component';
 import { ContactsComponent } from 'src/Components/contacts/contacts.component';
 import { RegisterComponent } from 'src/Components/register/register.component';
+import { LoginComponent } from 'src/Components/login/login.component';
 
 const routes: Routes = [
   { path: ' ', component: HomeComponent },
   { path: 'Home', component: HomeComponent },
   { path: 'About', component: AboutComponent },
   { path: 'Exams', component: ExamsListComponent },
-  { path: 'examQA/:examId', component:ExamQAsComponent}, 
-  { path: 'conacts', component: ContactsComponent }, 
-  { path: 'register', component: RegisterComponent }, 
+  { path: 'examQA/:examId', component:ExamQAsComponent},
+  { path: 'conacts', component: ContactsComponent },
+  { path: 'register', component: RegisterComponent },
+  {path: 'login' , component: LoginComponent},
   { path: 'score/:examId/:totalScore/:attampedQuesstions/:UnattampedQuesstions/:wrongAnswers/:rightAnswers/:totalexamscore/:totalQquestionNumber', component:ExamResultComponent},
   { path: '**', component:NotFoundComponent},
 
@@ -26,6 +28,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-  
+export class AppRoutingModule {
+
 }

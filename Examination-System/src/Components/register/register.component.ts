@@ -15,7 +15,7 @@ export class RegisterComponent {
     email: new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]),
     password: new FormControl('',[Validators.required,Validators.minLength(8)]),
     selectedRole: new FormControl('', [Validators.required])
-  
+
 })
 
 
@@ -36,7 +36,7 @@ get getUserName(){
 
   constructor(private router: Router,
     private registerService:RegisterService) {}
-  
+
   register() {
     const User={
       username:this.rigisterForm.value.userName,
@@ -53,7 +53,7 @@ get getUserName(){
       this.rigisterForm.reset();
 
     });
-    
-    this.router.navigate(['/Home']);
+
+    this.router.navigate(['/login']);
   }
 }

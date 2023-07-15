@@ -1,12 +1,12 @@
-<nav class="navbar bg-dark navbar-expand-lg border-bottom border-bottom-dark" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">QUIZO</a>
+<nav class="navbar  p-2 bg-dark navbar-expand-lg border-bottom border-bottom-dark" data-bs-theme="dark">
+  <div class="container-fluid p-2">
+    <a class="navbar-brand  " href="#">QUIZO</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
-        <a class="nav-link active" aria-current="page" [routerLink]="['/Home']"
+        <a class="nav-link  active" aria-current="page" [routerLink]="['/Home']"
         [routerLinkActive]=" 'text-success'">Home</a>
         <a class="nav-link active"   [routerLink]="['/About']"
         [routerLinkActive]="'text-success'">About</a>
@@ -14,9 +14,12 @@
         [routerLink]="['/Exams']"
         [routerLinkActive]="'text-success'"
         [routerLinkActiveOptions]="{exact:true}">Exams</a>
-        <a class="nav-link active"  [routerLink]="['/conacts']"
-        [routerLinkActive]="'text-success'">Countact</a>
-        <a class="nav-link active" href="#"> <i class="fa-solid fa-user"></i> lOGIN</a>
+        <!-- <a class="nav-link active"  [routerLink]="['/conacts']"
+        [routerLinkActive]="'text-success'">Countact</a> -->
+        <a class="nav-link active"
+        [routerLink]="['/login']"
+        [routerLinkActive]="'text-success'"
+        href="#"> <i class="fa-solid fa-user"></i> Login</a>
         <a class="nav-link active"   [routerLink]="['/register']">Register</a>
       </div>
     </div>
