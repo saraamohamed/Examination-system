@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { NavbarComponent } from 'src/Components/navbar/navbar.component';
 import { FooterComponent } from 'src/Components/footer/footer.component';
 import { ExamsListComponent } from 'src/Components/exams-list/exams-list.component';
@@ -28,12 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
     ExamResultComponent,
     HomeComponent,
     AboutComponent,NotFoundComponent,ContactsComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,RouterModule,
     AppRoutingModule,HttpClientModule, CommonModule,
-    FormsModule,
+    FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

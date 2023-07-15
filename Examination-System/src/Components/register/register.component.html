@@ -1,171 +1,113 @@
-<div class="container p-5">
-    <div class="row">
-      <h1>Register</h1>
-      <label for="role" class="form-label">Role:</label>
-      <select class="form-select" id="role" name="role" ngModel="role" required>
-        <option value="">-- Select Role --</option>
-        <option value="admin">Admin</option>
-        <option value="user">User</option>
-      </select>
-      <div *ngIf="role === ''" class="text-danger">Please select a role.</div>
-      
-      <label for="firstName" class="form-label">First Name:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="firstName"
-        name="firstName"
-        ngModel="firstName"
-        required
-        minlength="2"
-        maxlength="50"
-        pattern="[A-Za-z ]+"
-      />
+  <section class="" style="background-color: #eee;">
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black m-3" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
   
-      <label for="email" class="form-label">Email address:</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        name="email"
-        [(ngModel)]="email"
-        required
-        email
-      />
-      <div *ngIf=" !email?.match('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')"
-        class="text-danger">Please enter a valid email address.</div>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
   
-      <label for="password" class="form-label">Password:</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        name="password"
-        [(ngModel)]="password"
-        required
-        minlength="8"
-        maxlength="50"
-      />
-      <div *ngIf="password?.length < 8 || password?.length > 50" class="text-danger">
-        Please enter a valid password (8-50 characters).
-      </div>
+                  <form class="mx-1 mx-md-4" [formGroup]="rigisterForm">
   
-      <div class="row">
-        <div class="col-md-4">
-          <label for="state" class="col-form-label">State:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="state"
-            name="state"
-            [(ngModel)]="state"
-            required
-            minlength="2"
-            maxlength="50"
-            pattern="[A-Za-z ]+"
-          />
-          <div *ngIf=" !state?.match('[A-Za-z ]+')" class="text-danger">
-            Please enter a valid state (2-50 characters, letters and spaces only).
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="city" class="col-form-label">City:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="city"
-            name="city"
-            [(ngModel)]="city"
-            required
-            minlength="2"
-            maxlength="50"
-            pattern="[A-Za-z ]+"
-          />
-          <div *ngIf=" !city?.match('[A-Za-z ]+')" class="text-danger">
-            Please enter a valid city (2-50 characters, letters and spaces only).
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="postalCode" class="col-form-label">Postal Code:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="postalCode"
-            name="postalCode"
-            [(ngModel)]="postalCode"
-            required
-            minlength="5"
-            maxlength="10"
-            pattern="[0-9A-Za-z-]+"
-          />
-          <div *ngIf=" !postalCode?.match('[0-9A-Za-z-]+')" 
-            class="text-danger">
-            Please enter a valid postal code (5-10 characters, letters, numbers, and hyphens only).
-          </div>
-        </div>
-      </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="name" class="form-control" formControlName="name" />
+                        <label class="form-label" for="name">Your Name</label>
+                        <ng-container *ngIf="getName.touched" >
+                          <div *ngIf="getName.hasError('required')" id="name" class="form-text text-danger  w-75">
+                           Please Enter your Name                                   </div>
+                      </ng-container>
+                      </div>
+                     
+                    </div>
   
-      <div class="row">
-        <div class="col-md-6">
-          <label for="age" class="col-form-label">Age:</label>
-         <input
-            type="number"
-            class="form-control"
-            id="age"
-            name="age"
-            [(ngModel)]="age"
-            required
-            min="18"
-            max="120"
-          />
-          <div *ngIf="age < 18 || age > 120" class="text-danger">Please enter a valid age (18-120).</div>
-        </div>
-        <div class="col-md-6">
-          <label for="phone" class="col-form-label">Phone:</label>
-          <input
-  type="text"
-  class="form-control"
-  id="phone"
-  name="phone"
-  [(ngModel)]="phone"
-  required
-  minlength="10"
-  maxlength="20"
-  pattern="^01[0-2]\d{1,8}$"
-/>
-        </div>
-        <div class="col-md-12">
-          <label for="gender" class="col-form-label">Gender:</label>
-          <div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                id="male"
-                name="gender"
-                [(ngModel)]="gender"
-                value="male"
-                required
-              />
-              <label class="form-check-label" for="male">Male</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input
-                class="form-check-input"
-                type="radio"
-                id="female"
-                name="gender"
-                [(ngModel)]="gender"
-                value="female"
-                required
-              />
-              <label class="form-check-label" for="female">Female</label>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fa-solid fa-file-signature fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="userName" class="form-control" formControlName="userName" />
+                        <label class="form-label" for="userName">UserName</label>
+                        <ng-container *ngIf="getUserName.touched" >
+                          <div *ngIf="getUserName.hasError('required')" id="userName" class="form-text text-danger  w-75">
+                           Please Enter a userName                                </div>
+                           <div *ngIf="getUserName.hasError('minLength')" id="userName" class="form-text text-danger  w-75">
+                            Please Enter a Valid userName                                </div>
+                      </ng-container>
+                      </div>
+                     
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="email" class="form-control" formControlName="email" />
+                        <label class="form-label" for="email">Your Email</label>
+                        <ng-container *ngIf="getEmail.touched" >
+                          <div *ngIf="getEmail.hasError('required')" id="email" class="form-text text-danger  w-75">
+                           Please Enter an Email                              </div>
+                           <div *ngIf="getEmail.hasError('pattern')" id="email" class="form-text text-danger  w-75">
+                            Please Enter a Valid Email                                </div>
+                      </ng-container>
+                      </div>
+                   
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="password" class="form-control" formControlName="password"/>
+                        <label class="form-label" for="password">Password</label>
+                        <ng-container *ngIf="getEmail.touched" >
+                          <div *ngIf="getEmail.hasError('required')" id="password" class="form-text text-danger  w-75">
+                           Please Enter a Password                              
+                          </div>
+                           <div *ngIf="getEmail.hasError('minLength')" id="password" class="form-text text-danger  w-75">
+                            Password must be at least 8 characters long         
+                          </div>
+  
+                          </ng-container>
+                      </div>
+                     
+                    </div>
+                      
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fa-solid fa-lg me-3 fa-fw fa-user-lock"></i>
+                      <div class="form-floating flex-fill mb-0">
+                        <select class="form-control form-control-lg" id="selectedRole" formControlName="selectedRole">
+                          <option value="admin">Admin</option>
+                          <option value="user">User</option>
+                        </select>
+                        <label class="select-label" for="selectedRole">Choose Role</label>
+                        <ng-container *ngIf="getSelectedRole.touched" >
+                          <div *ngIf="getSelectedRole.hasError('required')" id="selectedRole" class="form-text text-danger  w-75">
+                           Please Choose a Role to Register                                  </div>
+                      </ng-container>
+                      </div>
+                    
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button [disabled]="!rigisterForm.valid"  (click)="register()" class="btn btn-primary btn-lg">Register</button>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
             </div>
           </div>
-          <div *ngIf="!gender" class="text-danger">Please select a gender.</div>
         </div>
       </div>
-      <button type="button" class="btn btn-secondary" (click)="register()">Register</button>
-      <!-- <button type="button" class="btn btn-secondary">Register</button> -->
     </div>
-  </div>
+  </section>
+
+
+ 
