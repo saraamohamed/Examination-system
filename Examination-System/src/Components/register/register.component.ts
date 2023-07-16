@@ -48,7 +48,8 @@ get getUserName(){
     }
     console.log(User);
 
-    this.registerService.Register(User).subscribe(()=>{
+    this.registerService.Register(User).subscribe((response)=>{
+      next:
       console.log("added");
       this.rigisterForm.reset();
 

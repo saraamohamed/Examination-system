@@ -32,7 +32,6 @@
     background-color: rgb(243,243,243);
 }
 
-/* section 2 subjects */
 .bttn{
     background-color: navy;
     color: white;
@@ -46,7 +45,6 @@
 }
 
 
-/* section 3 reviews*/
 .reviews{
     background-color: rgb(243,243,243);
 }
@@ -56,7 +54,6 @@
     font-weight: bolder;
     background-color: black;
 }
-/*section 4 form*/
 .form-control {
   border: none;
   border-bottom: 2px solid black;

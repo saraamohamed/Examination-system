@@ -13,14 +13,11 @@
         <a class="nav-link active"
         [routerLink]="['/Exams']"
         [routerLinkActive]="'text-success'"
-        [routerLinkActiveOptions]="{exact:true}">Exams</a>
-        <!-- <a class="nav-link active"  [routerLink]="['/conacts']"
-        [routerLinkActive]="'text-success'">Countact</a> -->
+        [routerLinkActiveOptions]="{exact:true}" [hidden]="!isUser">Exams</a>
         <a class="nav-link active"
-        [routerLink]="['/login']"
-        [routerLinkActive]="'text-success'"
-        href="#"> <i class="fa-solid fa-user"></i> Login</a>
-        <a class="nav-link active"   [routerLink]="['/register']">Register</a>
+        [routerLinkActive]="'text-success'" [routerLink]="['/login']" [hidden]="isLogged" > <i class="fa-solid fa-user"></i> Login</a>
+        <a class="nav-link active"[routerLinkActive]="'text-success'" [hidden]="!isLogged"   (click)="signOut()"> <i class="fa-solid fa-user"></i> LogOut</a>
+        <a class="nav-link active"   [routerLink]="['/register']"[hidden]="isLogged">Register</a>
       </div>
     </div>
   </div>
