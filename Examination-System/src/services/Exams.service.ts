@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class ExamService {
   baseURL: string = 'https://localhost:7022/api/exam/all';
+  baseDelete:string='https://localhost:7022/api/exam/delete';
+
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +24,7 @@ export class ExamService {
   }
 
   deleteExam(examId: any) {
-    return this.http.delete(`${this.baseURL}?examId=${examId}`);
+    return this.http.delete(`${this.baseDelete}?examId=${examId}`);
   }
 
   editExam(examId: any, exam: any) {

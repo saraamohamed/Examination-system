@@ -20,6 +20,9 @@ import { LoginComponent } from 'src/Components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateExamComponent } from 'src/Components/create-exam/create-exam.component';
+import { AdminExamComponent } from 'src/Components/admin-exam/admin-exam.component';
+import { AddQuestionComponent } from 'src/Components/add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,NotFoundComponent,ContactsComponent,
     RegisterComponent,
     LoginComponent,
+    CreateExamComponent,
+    AdminExamComponent,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule,RouterModule,
