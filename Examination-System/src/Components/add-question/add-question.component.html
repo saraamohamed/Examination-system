@@ -96,7 +96,7 @@
                 </div>
             </ng-container>
             <div class="d-flex  justify-content-end">
-                <button class="btn btn-dark " *ngIf="!falsyValue"> Add</button>
+                <button class="btn btn-dark " *ngIf="!falsyValue" (click)="savequestion()" > Add</button>
                 <button class="btn btn-success " *ngIf="falsyValue" (click)="saveAllChanges()"> Update</button>
 
             </div>

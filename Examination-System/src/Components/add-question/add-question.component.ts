@@ -39,9 +39,7 @@ export class AddQuestionComponent implements OnInit {
     );
   }
 
-
-  AddNewquestion(e: any) {
-    e.preventDefault();
+  savequestion(){
     if (this.Questionform.status == 'VALID') {
       const question = {
         questionHeader: this.getQuestion.value,
@@ -66,6 +64,10 @@ export class AddQuestionComponent implements OnInit {
     } else {
       console.log("Error")
     }
+  }
+  AddNewquestion(e: any) {
+    e.preventDefault();
+  
   }
 
   EditQuestion(id: any) {
