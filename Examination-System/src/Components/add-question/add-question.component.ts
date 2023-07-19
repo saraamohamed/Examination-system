@@ -54,24 +54,15 @@ export class AddQuestionComponent implements OnInit {
         ExamName: this.examName,
       }
 
-
-      // "id": 0,
-      // "questionHeader": "string",
-      // "questionFirstChoice": "string",
-      // "questionSecondChoice": "string",
-      // "questionThirdChoice": "string",
-      // "questionFourthChoice": "string",
-      // "rightAnswer": "string",
-      // "examId": 0,
-      // "examName": "string"
-
-
       this.questionService.addQuestion(question).subscribe((Response) => {
         console.log(Response);
         this.loadQestions(this.examId);
-        console.log("All Done Added")
+        console.log("All Done Added");
+
       });
       console.log(question);
+      this.Questionform.reset();
+
     } else {
       console.log("Error")
     }
@@ -80,8 +71,10 @@ export class AddQuestionComponent implements OnInit {
   EditQuestion(id: any) {
     this.falsyValue = true;
     this.selectedQestionID = id;
+    console.log(id);
     this.questionService.getestionByIDElement(id).subscribe((result: any) => {
       const question = result;
+      console.log(question);
       this.Questionform.patchValue({
         question: question.questionHeader,
         answer1: question.questionFirstChoice,
@@ -106,19 +99,6 @@ export class AddQuestionComponent implements OnInit {
       examId: this.examId,
       ExamName: this.examName
     }
-
-    // "id": 0,
-    // "questionHeader": "string",
-    // "questionFirstChoice": "string",
-    // "questionSecondChoice": "string",
-    // "questionThirdChoice": "string",
-    // "questionFourthChoice": "string",
-    // "rightAnswer": "string",
-    // "examId": 0,
-    // "examName": "string"
-
-
-
 
     this.questionService.Edit(qusetion).subscribe(() => {
       console.log("Edit Done");

@@ -40,7 +40,7 @@ constructor(private router: Router,
       next: (response: HttpResponse<any>) => {
         const statusCode = this.loginService.getStatus(response);
         if (statusCode === 200) { // Check the status code
-          this.token = response.body.generatedJwtToken; // Extract the JWT token from the response body
+          this.token = response.body.token; // Extract the JWT token from the response body
           const tokenData = jwt_decode(this.token);
           console.log("Logged in successfully");
           localStorage.setItem("token", this.token); // Save the token to local storage
